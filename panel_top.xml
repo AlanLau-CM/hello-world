@@ -1,0 +1,887 @@
+<?xml version="1.0" encoding="utf-8"?>
+<metadata xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://tempuri.org">
+  <object  type="menu">
+    <propertybag>
+      <add key="orientation">1</add>
+      <add key="actionprocedureXXXX">codehook_event_trace</add>
+    </propertybag>
+    <comments>
+    </comments>
+    <groups>
+      <group>
+        <comments>
+        </comments>
+        <items>
+          <item id="root" type="hidden">
+            <comments>
+            </comments>
+          </item>
+
+
+
+          <item id="home" type="link">
+            <propertybag>
+              <add key="label">Home</add>
+              <add key="relation">root</add>
+              <add key="icon">home</add>
+              <add key="join">panel_main</add>
+              <add key="userid">{person_id}</add>
+              <add key="leftpanel">menu_home</add>
+              <add key="rightpanel">panel_right</add>
+              <add key="footerpanel">panel_footer</add>
+              <add key="tooltip">Home Page</add>
+              <add key="breadcrumb">Home</add>
+              <add key="breadcrumb_level">0</add>
+            </propertybag>
+            <comments>HOME</comments>
+          </item>
+          <item id="debug_header" type="label">
+            <propertybag>
+              <add key="relation">home</add>
+              <add key="label">
+                <![CDATA[DEBUG<br>________________]]>
+              </add>
+            </propertybag>
+            <security>
+              <allowdeny type="visible" status="allow">SUPERUSER</allowdeny>
+            </security>
+            <comments>
+            </comments>
+          </item>
+          <item id="debug_itemid" type="label">
+            <propertybag>
+              <add key="relation">home</add>
+              <add key="label">itemid=[itemid]</add>
+            </propertybag>
+            <security>
+              <allowdeny type="visible" status="allow">SUPERUSER</allowdeny>
+            </security>
+            <comments>
+            </comments>
+          </item>
+          <item id="debug_objectid" type="label">
+            <propertybag>
+              <add key="relation">home</add>
+              <add key="label">objectid=[objectid]</add>
+            </propertybag>
+            <security>
+              <allowdeny type="visible" status="allow">SUPERUSER</allowdeny>
+            </security>
+            <comments>
+            </comments>
+          </item>
+          <item id="debug_keyfield" type="label">
+            <propertybag>
+              <add key="relation">home</add>
+              <add key="label">keyfield=[keyfield]</add>
+            </propertybag>
+            <security>
+              <allowdeny type="visible" status="allow">SUPERUSER</allowdeny>
+            </security>
+            <comments>
+            </comments>
+          </item>
+          <item id="debug_keyvalue" type="label">
+            <propertybag>
+              <add key="relation">home</add>
+              <add key="label">keyvalue=[keyvalue]</add>
+            </propertybag>
+            <security>
+              <allowdeny type="visible" status="allow">SUPERUSER</allowdeny>
+            </security>
+            <comments>
+            </comments>
+          </item>
+          <item id="debug_userid" type="label">
+            <propertybag>
+              <add key="relation">home</add>
+              <add key="label">userid=[userid]</add>
+            </propertybag>
+            <security>
+              <allowdeny type="visible" status="allow">SUPERUSER</allowdeny>
+            </security>
+            <comments>
+            </comments>
+          </item>
+          <item id="debug_action" type="label">
+            <propertybag>
+              <add key="relation">home</add>
+              <add key="label">action=[action]</add>
+            </propertybag>
+            <security>
+              <allowdeny type="visible" status="allow">SUPERUSER</allowdeny>
+            </security>
+            <comments>
+            </comments>
+          </item>
+          <item id="debug_processid" type="label">
+            <propertybag>
+              <add key="relation">home</add>
+              <add key="label">processid=[processid]</add>
+            </propertybag>
+            <security>
+              <allowdeny type="visible" status="allow">SUPERUSER</allowdeny>
+            </security>
+            <comments>
+            </comments>
+          </item>
+          <item id="debug_flag" type="label">
+            <propertybag>
+              <add key="relation">home</add>
+              <add key="label">flag=[flag]</add>
+            </propertybag>
+            <security>
+              <allowdeny type="visible" status="allow">SUPERUSER</allowdeny>
+            </security>
+            <comments>
+            </comments>
+          </item>
+          <item id="debug_leftpanel" type="label">
+            <propertybag>
+              <add key="relation">home</add>
+              <add key="label">leftpanel=[leftpanel]</add>
+            </propertybag>
+            <security>
+              <allowdeny type="visible" status="allow">SUPERUSER</allowdeny>
+            </security>
+            <comments>
+            </comments>
+          </item>
+
+
+
+          <item id="manager" type="link">
+            <propertybag>
+              <add key="relation">root</add>
+              <add key="label">Manager</add>
+              <add key="icon">user-1</add>
+              <add key="join">staff_list_report</add>
+              <add key="keyfield">[Profile_Preference_Team],Person_Status,Person_Active</add>
+              <add key="keyvalue">{Person_ID}|TRUE|TRUE</add>
+              <add key="userid">{Person_ID}</add>
+              <add key="leftpanel">menu_manager</add>
+              <add key="rightpanel">ec_null</add>
+              <add key="footerpanel">panel_footer</add>
+              <add key="tooltip">Manager information</add>
+              <add key="breadcrumb">Manager</add>
+              <add key="breadcrumb_level">0</add>
+			  <add key="flag">MANAGER</add>
+            </propertybag>
+            <security>
+              <allowdeny type="visible" status="allow">MANAGER</allowdeny>
+              <allowdeny type="visible" status="allow">TEAMdelegate</allowdeny>
+            </security>
+            <comments>enable for Team Delegate
+            </comments>
+          </item>
+
+
+         <item id="modules" type="link">
+            <propertybag>
+              <add key="label">HR</add>
+              <add key="relation">root</add>
+              <add key="icon">users</add>
+              <add key="join">
+<![CDATA[{select case when charindex('PERSONNEL', dbo.ec_XMLtag('Module_List','[MODULE_ACCESS]')) =0 then 'company_directory_report' 
+when charindex('<allowdeny status="allow">PERSONNEL_ADMIN</allowdeny>' , '[ROLE_SECURITY]') >0 then 'staff_list_report' 
+when charindex('<allowdeny status="allow">ADMIN</allowdeny>' , '[ROLE_SECURITY]') >0 then 'staff_list_report' else 'company_directory_report' end }]]>
+</add>
+              <add key="keyfield">Person_Status,Person_Active</add>
+              <add key="keyvalue">TRUE|TRUE</add>
+              <add key="userid">
+              </add>
+              <add key="flag">HRADMIN</add>
+              <add key="url">
+                <![CDATA[menutype=ADMIN&]]>
+              </add>
+              <add key="leftpanel"><![CDATA[{select case 
+when charindex('PERSONNEL', dbo.ec_XMLtag('Module_List','[MODULE_ACCESS]')) =0 then 'menu_home' 
+when charindex('<allowdeny status="allow">PERSONNEL_ADMIN</allowdeny>' , '[ROLE_SECURITY]') >0 then 'menu_personnel' 
+when charindex('<allowdeny status="allow">ADMIN</allowdeny>' , '[ROLE_SECURITY]') >0 then 'menu_personnel' 
+else 'menu_home' end}]]></add>
+              <add key="rightpanel">ec_null</add>
+              <add key="footerpanel">panel_footer</add>
+              <add key="breadcrumb"><![CDATA[{select case 
+when charindex('PERSONNEL', dbo.ec_XMLtag('Module_List','[MODULE_ACCESS]')) =0 then 'Home' 
+when charindex('<allowdeny status="allow">PERSONNEL_ADMIN</allowdeny>' , '[ROLE_SECURITY]') >0 then 'People' 
+when charindex('<allowdeny status="allow">ADMIN</allowdeny>' , '[ROLE_SECURITY]') >0 then 'People' 
+else 'Home' end}]]></add>
+              <add key="breadcrumb_level">0</add>
+            </propertybag>
+            <security>
+              <allowdeny type="visible" status="allow">PERSONNEL_ADMIN</allowdeny>
+              <allowdeny type="visible" status="allow">ORGANISATION_ADMIN</allowdeny>
+              <allowdeny type="visible" status="allow">COMMUNICATION_ADMIN</allowdeny>
+              <allowdeny type="visible" status="allow">TRAINING_ADMIN</allowdeny>
+              <allowdeny type="visible" status="allow">RECRUITMENT_ADMIN</allowdeny>
+              <allowdeny type="visible" status="allow">PERFORMANCE_ADMIN</allowdeny>
+              <allowdeny type="visible" status="allow">REMUNERATION_ADMIN</allowdeny>
+              <allowdeny type="visible" status="allow">OHS_ADMIN</allowdeny>
+              <allowdeny type="visible" status="allow">ADMIN</allowdeny>
+			  
+
+            </security>
+            <comments>
+            </comments>
+          </item>
+
+
+
+          <item id="personnel" type="link">
+            <propertybag>
+              <add key="label">People</add>
+              <add key="relation">modules</add>
+              <add key="join">staff_list_report</add>
+              <add key="keyfield">Person_Status</add>
+              <add key="keyvalue">TRUE</add>
+              <add key="userid">
+              </add>
+              <add key="flag">HRADMIN</add>
+              <add key="leftpanel">menu_personnel</add>
+              <add key="rightpanel">ec_null</add>
+              <add key="footerpanel">panel_footer</add>
+              <add key="breadcrumb">People</add>
+              <add key="breadcrumb_level">0</add>
+              <add key="visible">
+                <![CDATA[{select case when charindex('PERSONNEL', dbo.ec_XMLtag('Module_List','[MODULE_ACCESS]')) >0 then 'true' else 'false' end}]]>
+              </add>
+            </propertybag>
+            <security>
+              <allowdeny type="visible" status="allow">PERSONNEL_ADMIN</allowdeny>
+              <allowdeny type="visible" status="allow">ADMIN</allowdeny>
+              <allowdeny type="visible" status="deny">KIOSK</allowdeny>
+            </security>
+            <comments>
+            </comments>
+          </item>
+          <item id="organisation" type="link">
+            <propertybag>
+              <add key="relation">modules</add>
+              <add key="label">Organisation</add>
+              <add key="join">manager_chart_report</add>
+              <add key="leftpanel">menu_organisation</add>
+              <add key="rightpanel">ec_null</add>
+              <add key="footerpanel">panel_footer</add>
+              <add key="breadcrumb">Organisation</add>
+              <add key="breadcrumb_level">0</add>
+              <add key="visible">
+                <![CDATA[{select case when charindex('ORGANISATION', dbo.ec_XMLtag('Module_List','[MODULE_ACCESS]')) >0 then 'true' else 'false' end}]]>
+              </add>
+            </propertybag>
+            <security>
+              <allowdeny type="visible" status="allow">ORGANISATION_ADMIN</allowdeny>
+              <allowdeny type="visible" status="allow">ADMIN</allowdeny>
+              <allowdeny type="visible" status="deny">KIOSK</allowdeny>
+              <allowdeny type="visible" status="deny">CIRRUSxx</allowdeny>
+            </security>
+            <comments>
+            </comments>
+          </item>
+          <item id="menu_development" type="link">
+            <propertybag>
+              <add key="relation">modules</add>
+              <add key="label">Development</add>
+              <add key="join">development_training_course_report</add>
+              <add key="flag">Development</add>
+              <add key="leftpanel">menu_development</add>
+              <add key="rightpanel">ec_null</add>
+              <add key="footerpanel">ec_null</add>
+              <add key="breadcrumb">Development</add>
+              <add key="breadcrumb_level">0</add>
+              <add key="visible">
+                <![CDATA[{select case when charindex('DEVELOPMENT', dbo.ec_XMLtag('Module_List','[MODULE_ACCESS]')) >0 then 'true' else 'false' end}]]>
+              </add>
+            </propertybag>
+            <security>
+              <allowdeny type="visible" status="allow">TRAINING_ADMIN</allowdeny>
+              <allowdeny type="visible" status="allow">ADMIN</allowdeny>
+              <allowdeny type="visible" status="deny">TRAINING_off</allowdeny>
+              <allowdeny type="visible" status="deny">KIOSK</allowdeny>
+            </security>
+            <comments>
+            </comments>
+          </item>
+          <item id="menu_training" type="link">
+            <propertybag>
+              <add key="relation">modules</add>
+              <add key="label">Training</add>
+              <add key="join">training_course_admin_report</add>
+              <add key="action">insert/update/delete</add>
+              <add key="flag">Training</add>
+              <add key="leftpanel">menu_training</add>
+              <add key="rightpanel">ec_null</add>
+              <add key="footerpanel">ec_null</add>
+              <add key="breadcrumb">Training</add>
+              <add key="breadcrumb_level">0</add>
+              <add key="visible">
+                <![CDATA[{select case when charindex('TRAINING', dbo.ec_XMLtag('Module_List','[MODULE_ACCESS]')) >0 then 'true' else 'false' end}]]>
+              </add>
+            </propertybag>
+            <security>
+              <allowdeny type="visible" status="allow">TRAINING_ADMIN</allowdeny>
+              <allowdeny type="visible" status="allow">ADMIN</allowdeny>
+              <allowdeny type="visible" status="deny">TRAINING_off</allowdeny>
+              <allowdeny type="visible" status="deny">KIOSK</allowdeny>
+            </security>
+            <comments>"Training" removed from module list ... this was only used in v32
+            </comments>
+          </item>
+
+
+	<!-- CANDIDATE -->
+          <item id="menu_recruitment_candidate" type="link">
+            <propertybag>
+              <add key="relation">modules</add>
+              <add key="label">Recruitment <![CDATA[{select case when charindex('RECRUITMENT', dbo.ec_XMLtag('Module_List','[MODULE_ACCESS]')) >0 then '(Candidate)' else '' end}]]></add>
+              <add key="join">recruitment_candidate_dashboard</add>
+              <add key="action">update</add>
+              <add key="flag">SortSubmit</add>
+              <add key="leftpanel">menu_recruitment_candidate</add>
+              <add key="rightpanel">ec_null</add>
+              <add key="footerpanel">ec_null</add>
+              <add key="breadcrumb">Candidate</add>
+              <add key="breadcrumb_level">0</add>
+              <add key="visible">
+                <![CDATA[{select case when charindex('CANDIDATE', dbo.ec_XMLtag('Module_List','[MODULE_ACCESS]')) >0 then 'true' else 'false' end}]]>
+              </add>
+            </propertybag>
+            <security>
+              <allowdeny type="visible" status="allow">RECRUITMENT_ADMIN</allowdeny>
+              <allowdeny type="visible" status="allow">ADMIN</allowdeny>
+              <allowdeny type="visible" status="deny">KIOSK</allowdeny>
+            </security>
+            <comments>
+            </comments>
+          </item>
+
+
+          <item id="menu_recruitment" type="link">
+            <propertybag>
+              <add key="relation">modules</add>
+              <add key="label">Recruitment <![CDATA[{select case when charindex('CANDIDATE', dbo.ec_XMLtag('Module_List','[MODULE_ACCESS]')) >0 then '(Classic)' else '' end}]]></add>
+              <add key="join">HR_recruitment_Dashboard</add>
+              <add key="flag">Recruitment</add>
+              <add key="leftpanel">menu_recruitment</add>
+              <add key="rightpanel">ec_null</add>
+              <add key="footerpanel">ec_null</add>
+              <add key="breadcrumb">Recruitment</add>
+              <add key="breadcrumb_level">0</add>
+              <add key="visible">
+                <![CDATA[{select case when charindex('RECRUITMENT', dbo.ec_XMLtag('Module_List','[MODULE_ACCESS]')) >0 then 'true' else 'false' end}]]>
+              </add>
+            </propertybag>
+            <security>
+              <allowdeny type="visible" status="allow">RECRUITMENT_ADMIN</allowdeny>
+              <allowdeny type="visible" status="allow">ADMIN</allowdeny>
+              <allowdeny type="visible" status="deny">KIOSK</allowdeny>
+            </security>
+            <comments>
+            </comments>
+          </item>
+
+
+
+          <item id="menu_succession" type="link">
+            <propertybag>
+              <add key="relation">modules</add>
+              <add key="label">Succession</add>
+              <!-- <add key="join">succession_bulk_report</add>
+              <add key="action">update</add> -->
+              <add key="join">succession_matrix_dashboard</add>
+              <add key="action">display</add>		  
+              <add key="flag">Talent</add>
+              <add key="leftpanel">menu_succession</add>
+              <add key="rightpanel">ec_null</add>
+              <add key="footerpanel">ec_null</add>
+              <add key="breadcrumb">Succession</add>
+              <add key="breadcrumb_level">0</add>
+              <add key="visible">
+                <![CDATA[{select case when charindex('TALENT', dbo.ec_XMLtag('Module_List','[MODULE_ACCESS]')) >0 then 'true' else 'false' end}]]>
+              </add>
+            </propertybag>
+            <security>
+              <allowdeny type="visible" status="allow">TALENT_ADMIN</allowdeny>
+              <allowdeny type="visible" status="allow">ADMIN</allowdeny>
+              <allowdeny type="visible" status="deny">KIOSK</allowdeny>
+            </security>
+            <comments>2019-07-23 join to new dashboard
+            </comments>
+          </item>          
+		  <item id="menu_performance" type="link">
+            <propertybag>
+              <add key="relation">modules</add>
+              <add key="label">Performance</add>
+              <add key="join">HR-Performance-Dashboard</add>
+              <add key="flag">{select top 1 PFR_Review_ID from Performance_Review where isnull(PFR_Status, '') = 'Open' order by PFR_Key desc}</add>
+              <add key="leftpanel">menu_performance</add>
+              <add key="rightpanel">ec_null</add>
+              <add key="footerpanel">ec_null</add>
+              <add key="breadcrumb">Performance</add>
+              <add key="breadcrumb_level">0</add>
+              <add key="visible">
+                <![CDATA[{select case when charindex('PERFORMANCE', dbo.ec_XMLtag('Module_List','[MODULE_ACCESS]')) >0 then 'true' else 'false' end}]]>
+              </add>
+            </propertybag>
+            <security>
+              <allowdeny type="visible" status="allow">PERFORMANCE_ADMIN</allowdeny>
+              <allowdeny type="visible" status="allow">ADMIN</allowdeny>
+              <allowdeny type="visible" status="deny">KIOSK</allowdeny>
+            </security>
+            <comments>
+            </comments>
+          </item>
+          <item id="menu_remuneration" type="link">
+            <propertybag>
+              <add key="relation">modules</add>
+              <add key="label">Remuneration</add>
+              <add key="xxx">HR_salary_dashboard</add>
+              <add key="join">{select case when dbo.ec_XMLtag('rmr_review_id',Profile_Data_Filter) !='' then 'HR_Salary_Dashboard' else 'remuneration_review_setup_report' end from ec_Profile where Profile_Person_ID = '[person_id]'}</add>
+              <add key="flag">{select dbo.ec_XMLtag('rmr_review_id',Profile_Data_Filter) from ec_Profile where Profile_Person_ID = '[person_id]'}</add>
+              <add key="leftpanel">menu_remuneration</add>
+              <add key="rightpanel">ec_null</add>
+              <add key="footerpanel">ec_null</add>
+              <add key="breadcrumb">Remuneration</add>
+              <add key="breadcrumb_level">0</add>
+              <add key="visible">
+                <![CDATA[{
+select case
+when charindex('REMUNERATION', dbo.ec_XMLtag('Module_List','[MODULE_ACCESS]')) >0
+and dbo.ec_XMLtag('SALARY_NoAccess','[MODULE_ACCESS]') != 'true'
+then 'true' else 'false' end
+}]]>
+              </add>
+            </propertybag>
+            <security>
+              <allowdeny type="visible" status="allow">REMUNERATION_ADMIN</allowdeny>
+              <allowdeny type="visible" status="allow">ADMIN</allowdeny>
+              <allowdeny type="visible" status="deny">KIOSK</allowdeny>
+            </security>
+            <comments>if review filter is set then use HR_Salary_Dashboard and pass flag, otherwise use remuneration_review_setup_report
+            </comments>
+          </item>
+          <item id="menu_ohs" type="link">
+            <propertybag>
+              <add key="relation">modules</add>
+              <add key="label">Safety</add>
+              <add key="flag">OHSadmin</add>
+              <add key="join">ohs_module_dashboard</add>
+              <add key="userid">{Person_ID}</add>
+              <add key="leftpanel">menu_ohs</add>
+              <add key="rightpanel">ec_null</add>
+              <add key="footerpanel">ec_null</add>
+              <add key="breadcrumb">Safety</add>
+              <add key="breadcrumb_level">0</add>
+              <add key="visible">
+                <![CDATA[{select case when charindex('OHS', dbo.ec_XMLtag('Module_List','[MODULE_ACCESS]')) >0 then 'true' else 'false' end}]]>
+              </add>
+            </propertybag>
+            <security>
+              <allowdeny type="visible" status="allow">OHS_ADMIN</allowdeny>
+              <allowdeny type="visible" status="allow">ADMIN</allowdeny>
+              <allowdeny type="visible" status="deny">KIOSK</allowdeny>
+            </security>
+            <comments>
+            </comments>
+          </item>
+
+          <item id="menu_payroll" type="link">
+            <propertybag>
+              <add key="relation">modules</add>
+              <add key="label">Payroll</add>
+              <add key="flag">Payroll</add>
+              <add key="join">payroll_payrun_filter_form</add>
+              <add key="leftpanel">menu_payroll</add>
+              <add key="rightpanel">ec_null</add>
+              <add key="footerpanel">ec_null</add>
+              <add key="breadcrumb">Payroll</add>
+              <add key="breadcrumb_level">0</add>
+              <add key="visible">
+                <![CDATA[{select case when charindex('PAYROLL', dbo.ec_XMLtag('Module_List','[MODULE_ACCESS]')) >0 then 'true' else 'false' end}]]>
+              </add>
+            </propertybag>
+            <security>
+            </security>
+            <comments>
+            </comments>
+          </item>
+
+
+
+          <item id="reports" type="link">
+            <propertybag>
+              <add key="label">Reports</add>
+              <add key="icon">chart</add>
+              <add key="relation">root</add>
+			 <add key="join">HR_ScoreCard</add>
+              <add key="flag">Reports</add>
+              <add key="leftpanel">menu_reports</add>
+              <add key="rightpanel">ec_null</add>
+              <add key="footerpanel">panel_footer</add>
+              <add key="tooltip">Reports</add>
+              <add key="breadcrumb">Reports</add>
+              <add key="breadcrumb_level">0</add>
+            </propertybag>
+            <security>
+              <allowdeny type="visible" status="allow">PERSONNEL_ADMIN</allowdeny>
+              <allowdeny type="visible" status="allow">ADMIN</allowdeny>
+              <allowdeny type="visible" status="deny">MANAGERonly</allowdeny>
+            </security>
+            <comments>
+            </comments>
+          </item>
+		  
+		 
+		  <item id="HR_Reports" type="link">
+            <propertybag>
+              <add key="label">HR</add>
+             <!-- <add key="icon">chart</add>-->
+              <add key="relation">reports</add>
+			 <add key="join">HR_ScoreCard</add>
+              <add key="flag">Reports</add>
+              <add key="leftpanel">menu_reports</add>
+              <add key="rightpanel">ec_null</add>
+              <add key="footerpanel">panel_footer</add>
+        <!--      <add key="tooltip">Reports</add>-->
+              <add key="breadcrumb">Reports</add>
+              <add key="breadcrumb_level">0</add>
+            </propertybag>
+            <security>
+              <allowdeny type="visible" status="allow">PERSONNEL_ADMIN</allowdeny>
+              <allowdeny type="visible" status="allow">ADMIN</allowdeny>
+              <allowdeny type="visible" status="deny">MANAGERonly</allowdeny>
+            </security>
+            <comments>
+            </comments>
+          </item>
+		 
+
+		 <item id="manager_reports" type="link">
+            <propertybag>
+              <add key="label">Manager</add>
+              <!--<add key="icon">chart</add>-->
+              <add key="relation">reports</add>
+			 <add key="join">Manager_ScoreCard</add>
+              <add key="flag">Reports</add>
+              <add key="leftpanel">menu_manager_reports</add>
+              <add key="rightpanel">ec_null</add>
+              <add key="footerpanel">panel_footer</add>
+              <!--<add key="tooltip">Manager Reports</add>-->
+              <add key="breadcrumb">Manager Reports</add>
+              <add key="breadcrumb_level">0</add>
+            </propertybag>
+            <security>
+              <allowdeny type="visible" status="allow">MANAGER</allowdeny>
+              <allowdeny type="visible" status="deny">MANAGERonly</allowdeny>
+            </security>
+            <comments>
+            </comments>
+          </item>
+		
+		
+		 <item id="manageronly_reports" type="link">
+            <propertybag>
+              <add key="label">Reports</add>
+              <add key="icon">chart</add>
+              <add key="relation">root</add>
+			 <add key="join">Manager_ScoreCard</add>
+              <add key="flag">Reports</add>
+              <add key="leftpanel">menu_manager_reports</add>
+              <add key="rightpanel">ec_null</add>
+              <add key="footerpanel">panel_footer</add>
+              <!--<add key="tooltip">Manager Reports</add>-->
+              <add key="breadcrumb">Manager Reports</add>
+              <add key="breadcrumb_level">0</add>
+            </propertybag>
+            <security>
+              <allowdeny type="visible" status="allow">MANAGERonly</allowdeny>
+            </security>
+            <comments>
+            </comments>
+          </item>
+		
+
+          <item id="system" type="link">
+            <propertybag>
+              <add key="relation">root</add>
+              <add key="label">Advanced</add>
+              <add key="join">userprofile_report</add>
+              <add key="action">INSERT/UPDATE</add>
+              <add key="leftpanel">menu_system</add>
+              <add key="rightpanel">ec_null</add>
+              <add key="footerpanel">ec_null</add>
+              <add key="breadcrumb">System Management</add>
+              <add key="breadcrumb_level">0</add>
+            </propertybag>
+            <security>
+              <allowdeny type="visible" status="allow">SYSADMIN</allowdeny>
+              <allowdeny type="visible" status="allow">SUPERUSER</allowdeny>
+            </security>
+            <comments>
+            </comments>
+          </item>
+          <item id="system_management" type="link">
+            <propertybag>
+              <add key="relation">system</add>
+              <add key="label">System Management</add>
+              <add key="join">userprofile_report</add>
+              <add key="action">INSERT/UPDATE</add>
+              <add key="leftpanel">menu_system</add>
+              <add key="rightpanel">ec_null</add>
+              <add key="footerpanel">ec_null</add>
+              <add key="breadcrumb">System Management</add>
+              <add key="breadcrumb_level">0</add>
+            </propertybag>
+            <security>
+              <allowdeny type="visible" status="allow">SYSADMIN</allowdeny>
+              <allowdeny type="visible" status="allow">SUPERUSER</allowdeny>
+            </security>
+            <comments>
+            </comments>
+          </item>
+          <item id="workflowadmin" type="link">
+            <propertybag>
+              <add key="relation">system</add>
+              <add key="label">Workflow</add>
+              <add key="joinxxx">workflowadmin</add>
+              <add key="join">workflow-dashboard</add>
+              <add key="userid">{person_id}</add>
+              <add key="leftpanel">menu_workflow</add>
+              <add key="rightpanel">ec_null</add>
+              <add key="footerpanel">ec_null</add>
+              <add key="breadcrumb">Workflow</add>
+              <add key="breadcrumb_level">0</add>
+            </propertybag>
+            <comments>
+            </comments>
+          </item>
+          <item id="menu_communication" type="link">
+            <propertybag>
+              <add key="relation">system</add>
+              <add key="label">Communication</add>
+              <add key="join">document_admin_tree</add>
+              <add key="leftpanel">menu_communication</add>
+              <add key="rightpanel">ec_null</add>
+              <add key="footerpanel">ec_null</add>
+              <add key="breadcrumb">Communication</add>
+              <add key="breadcrumb_level">0</add>
+              <add key="visible">
+                <![CDATA[{select case when charindex('COMMUNICATION', dbo.ec_XMLtag('Module_List','[MODULE_ACCESS]')) >0 then 'true' else 'false' end}]]>
+              </add>
+            </propertybag>
+            <comments>
+            </comments>
+          </item>
+
+<!--
+          <item id="payroll_integration" type="link">
+            <propertybag>
+              <add key="relation">system</add>
+              <add key="label">Integration</add>
+              <add key="join">integration_api_dashbaord</add>
+              <add key="action">display</add>
+              <add key="keyfield">Profile_Person_ID</add>
+              <add key="keyvalue">{Person_ID}</add>
+              <add key="leftpanel">menu_integration</add>
+              <add key="rightpanel">ec_null</add>
+              <add key="footerpanel">ec_null</add>
+              <add key="breadcrumb">Integration</add>
+              <add key="breadcrumb_level">0</add>
+			  <add key="visible">false</add>
+            </propertybag>
+            <security>
+              <allowdeny type="visible" status="allow">SYSADMIN</allowdeny>
+              <allowdeny type="visible" status="allow">SUPERUSER</allowdeny>
+            </security>
+            <comments>
+			PK: Hide existing link as every user should go to Integration Setup Form first
+            </comments>
+          </item>
+-->
+
+		  <item id="payroll_integration_setup_form" type="link">
+            <propertybag>
+              <add key="relation">system</add>
+              <add key="label">Integration</add>
+              <add key="join">integration_setup_form</add>
+              <add key="action">{select case when COUNT(*) = 0 then 'insert' else 'update' end from ec_TXconnect where TXconnectIntegrationGroup = TXconnectKiosk}</add>
+			  <add key="keyfield">TXconnectIntegrationGroup</add>
+              <add key="keyvalue">{PROFILE_Kiosk}</add>
+              <add key="leftpanel">menu_integration</add>
+              <add key="rightpanel">ec_null</add>
+              <add key="footerpanel">ec_null</add>
+              <add key="breadcrumb">Integration</add>
+              <add key="breadcrumb_level">0</add>
+            </propertybag>
+            <security>
+              <allowdeny type="visible" status="allow">SYSADMIN</allowdeny>
+              <allowdeny type="visible" status="allow">SUPERUSER</allowdeny>
+            </security>
+            <comments>
+            </comments>
+          </item>
+          <item id="toolkit" type="link">
+            <propertybag>
+              <add key="label">Developer Toolkit</add>
+              <add key="relation">system</add>
+              <add key="url">~/Toolkit.aspx</add>
+              <add key="breadcrumb">Developer Toolkit</add>
+              <add key="breadcrumb_level">0</add>
+              <add key="visible">{if exists (select * from dbo.sysobjects where name = '_ec_Kiosk') then 'false' else 'true' end}</add>
+            </propertybag>
+            <security>
+              <allowdeny type="visible" status="allow">SUPERUSER</allowdeny>
+              <allowdeny type="visible" status="deny">KIOSK</allowdeny>
+            </security>
+            <comments>do not allow access in KioskMode = 'true'           </comments>
+          </item>
+          <item id="businessbuilder" type="link">
+            <propertybag>
+              <add key="label">Custom Forms</add>
+              <add key="relation">system</add>
+              <add key="url">~/BusinessBuilder.aspx</add>
+            </propertybag>
+            <security>
+              <allowdeny type="visible" status="allow">SUPERUSER</allowdeny>
+              <allowdeny type="visible" status="allow">SysAdmin</allowdeny>
+              <allowdeny type="visible" status="deny">KIOSK</allowdeny>
+            </security>
+            <comments>
+            </comments>
+          </item>
+          <item id="object_manager_changelog" type="link">
+            <propertybag>
+              <add key="label">Change Log</add>
+              <add key="relation">system</add>
+              <add key="join">object_manager_changelog</add>
+              <add key="breadcrumb">Change Log</add>
+              <add key="breadcrumb_level">0</add>
+            </propertybag>
+            <security>
+              <allowdeny type="visible" status="allow">SUPERUSER</allowdeny>
+              <allowdeny type="visible" status="deny">KIOSK</allowdeny>
+            </security>
+            <comments>
+            </comments>
+          </item>
+          <item id="beta_header" type="link">
+            <propertybag>
+              <add key="label">Beta</add>
+              <add key="relation">system</add>
+              <add key="join">beta_page</add>
+              <add key="leftpanel">menu_system</add>
+              <add key="rightpanel">ec_null</add>
+              <add key="footerpanel">ec_null</add>
+              <add key="breadcrumb">Beta</add>
+              <add key="breadcrumb_level">0</add>
+            </propertybag>
+            <security>
+              <allowdeny type="visible" status="allow">SYSADMIN</allowdeny>
+              <allowdeny type="visible" status="allow">SUPERUSER</allowdeny>
+            </security>
+            <comments>
+            </comments>
+          </item>
+
+
+          <item id="sandbox" type="link">
+            <propertybag>
+              <add key="label">Sandbox</add>
+              <add key="relation">system</add>
+              <add key="join">sandbox_page</add>
+              <add key="leftpanel">sandbox_menu</add>
+              <add key="rightpanel">ec_null</add>
+              <add key="footerpanel">ec_null</add>
+              <add key="breadcrumb">Sandbox</add>
+              <add key="breadcrumb_level">0</add>
+              <add key="visible">{select case when DB_NAME() = 'SANDBOX' then 'true' else 'false' end}</add>
+            </propertybag>
+            <comments>menu only available on SANDBOX, with objects in MetaData</comments>
+          </item>
+
+		  <item id="payroll" type="link">
+            <propertybag>
+              <add key="relation">root</add>
+              <add key="label">Payroll</add>
+              <add key="join">select_action</add>
+              <add key="leftpanel">menu_payroll</add>
+              <add key="rightpanel">ec_null</add>
+              <add key="footerpanel">ec_null</add>
+              <add key="breadcrumb">Payroll</add>
+              <add key="breadcrumb_level">0</add>
+            </propertybag>
+            <security>
+              <allowdeny type="visible" status="allow">SYSADMIN</allowdeny>
+              <allowdeny type="visible" status="allow">SUPERUSER</allowdeny>
+            </security>
+            <comments>
+            </comments>
+          </item>
+		  <item id="payroll_setup" type="link">
+            <propertybag>
+              <add key="relation">payroll</add>
+              <add key="label">Payroll Setup</add>
+              <add key="join">select_action</add>
+              <add key="leftpanel">system_payroll_tree</add>
+              <add key="rightpanel">ec_null</add>
+              <add key="footerpanel">ec_null</add>
+              <add key="breadcrumb">Payroll Setup</add>
+              <add key="breadcrumb_level">0</add>
+            </propertybag>
+            <security>
+              <allowdeny type="visible" status="allow">SYSADMIN</allowdeny>
+              <allowdeny type="visible" status="allow">SUPERUSER</allowdeny>
+            </security>
+            <comments>
+            </comments>
+          </item>
+		  
+<!-- popup alert -->
+<!--
+<item id="PopupAlert" type="html">
+<propertybag>
+<add key="relation">root</add>
+<add key="label"><![CDATA[
+<a href=# onclick="$('#PopupAlert').modal('show')">Popup Alert</a>
+<div class="modal fade" id="PopupAlert" role="dialog">
+<div class="modal-dialog">
+<div class="modal-content">
+<div class="modal-header" align="left">
+<button type="button" class="close" data-dismiss="modal">&times;</button>
+<img src="images/logos/EC_logo_01.png">
+<big>
+{select top 1 isnull(MessageSubject,'Alert') from ec_Message where MessageType='popup' and MessageStatus='pending' and MessageUserID='{person_id}'}
+</big>
+</div>
+<form>
+<div class="modal-body">
+<p class="nav-header">
+<center>
+{select top 1 isnull(MessageBody,'') from ec_Message where MessageType='popup' and MessageStatus='pending' and MessageUserID='{person_id}'}
+</center>
+</p>
+</div>
+<div class="modal-footer">
+<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+</div>
+</form>
+</div>    
+</div>
+</div> 
+]]>
+</add>
+<add key="visible">{select case when exists(
+select * from ec_Message where MessageType='popup' and MessageStatus='pending' and MessageUserID='{person_id}'
+) then 'true' else 'false' end}</add>
+</propertybag>
+<comments>
+only visible if popup in ec_message
+</comments>
+</item>
+-->
+
+
+        </items>
+      </group>
+    </groups>
+  </object>
+</metadata>
